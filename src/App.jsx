@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import HomePage from "'/pages/HomePage";
-import ContentPage from "./ages/ContentPages";
+import HomePage from "./pages/HomePage";
+import ContentPage from "./pages/ContentPages";
 import NavigateBackButton from "./components/NavigateBackButton";
 
-import styles from ".App.module.css";
+import styles from "./App.module.css";
 
 function App() {
   const data = [
