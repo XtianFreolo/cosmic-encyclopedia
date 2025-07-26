@@ -41,17 +41,17 @@ function App() {
         <NavBar data={data} />
 
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<HomePage />} />
 
           {
-            data.map(data.Element => (
-          <Route
-            key={data.Element.id}
-            path={`/content/${dataElement.id}`}
-            element={<ContentPage data={dataElement} />}
-          />
+            data.map(dataElement => (
+              <Route
+                key={dataElement.id}
+                path={`/content/${dataElement.id}`}
+                element={<ContentPage data={dataElement} />}
+              />
 
-          ))
+            ))
           }
 
         </Routes>
