@@ -26,7 +26,7 @@ function App() {
       id: "Teemo",
       title: "Teemo the Scout",
       content: "Teemo is a champion in League of Legends known for his annoying playstyle, using mushrooms to control areas and frustrate opponents with his stealth and speed."
-    }
+    },
 
     {
       id: "Lux",

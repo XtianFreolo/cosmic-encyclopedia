@@ -13,15 +13,15 @@ function NavBar({ data }) {
             </Link>
 
             {
-                data.map(data.Element => (
-            <Link
-                key={dataElement.id}
-                to={`/content/${dataElement.id}`}
-                className={styles.link}
-            >
-                {dataElement.title}
-            </Link>
-            ))
+                data.map(dataElement => (
+                    <Link
+                        key={dataElement.id}
+                        to={`/content/${dataElement.id}`}
+                        className={styles.link}
+                    >
+                        {dataElement.title}
+                    </Link>
+                ))
             }
 
         </nav>
