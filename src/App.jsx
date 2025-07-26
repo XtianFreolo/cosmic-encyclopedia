@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import NavBar from "./components/NavBar";
+import HomePage from "'/pages/HomePage";
+import ContentPage from "./ages/ContentPages";
+import NavigateBackButton from "./components/NavigateBackButton";
+
+import styles from ".App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const data = [
+
+    {
+      id: "Yasuo",
+      title: "Yasuo the Feeder",
+      content: "Yasuo is a champion in League of Legends known for his high skill ceiling and potential to carry games, but also for being a common source of frustration due to players who feed or play poorly with him."
+    },
+
+    {
+      id: "Zed",
+      title: "Zed the Assassin",
+      content: "Zed is a champion in League of Legends known for his burst damage and mobility, often played as an assassin who can quickly eliminate key targets in team fights."
+    },
+
+    {
+      id: "Teemo",
+      title: "Teemo the Scout",
+      content: "Teemo is a champion in League of Legends known for his annoying playstyle, using mushrooms to control areas and frustrate opponents with his stealth and speed."
+    }
+
+    {
+      id: "Lux",
+      title: "Lux the Lady of Luminosity",
+      content: "Lux is a champion in League of Legends known for her powerful light-based abilities, providing both damage and utility to her team with her crowd control and vision control."
+    }
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={styles.mainContainer}>
+      <BrowserRouter>
+        <NavBar data={data} />
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+
+          {
+            data.map(data.Element => (
+          <Route
+            key={data.Element.id}
+            path={`/content/${dataElement.id}`}
+            element={<ContentPage data={dataElement} />}
+          />
+
+          ))
+          }
+
+        </Routes>
+
+        <NavigateBackButton />
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App; 
